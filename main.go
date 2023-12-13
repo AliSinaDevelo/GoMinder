@@ -39,7 +39,7 @@ func main() {
 		fmt.Println("Error: ", "Cannot parse time")
 		os.Exit(2)
 	}
-	now.After(t.Time) {
+	if now.After(t.Time) {
 		fmt.Println("Error: ", "Time is in the past")
 		os.Exit(3)
 	}
