@@ -24,7 +24,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	now = time.Now()
+	now := time.Now()
 	w := when.New(nil)
 	w.Add(en.All...)
 	w.Add(common.All...)
@@ -60,7 +60,7 @@ func main() {
 			fmt.Println("Error: ", err)
 			os.Exit(5)
 		}
-		fmt.Println("Reminder set for", difference.Round(time.Second)
+		fmt.Println("Reminder set for", difference.Round(time.Second))
 		os.Exit(0)
 	}
 }
