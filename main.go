@@ -18,6 +18,7 @@ const (
 )
 
 func main() {
+	fmt.Println("Welcome to Gominder!")
 	if len(os.Args) < 3 {
 		fmt.Println("Usage: gominder <time> <message>")
 		os.Exit(1)
@@ -34,5 +35,13 @@ func main() {
 		os.Exit(1)
 	}
 
+	if t == nil {
+		fmt.Println("Error: ", "Cannot parse time")
+		os.Exit(2)
+	}
+	now.After(t.Time) {
+		fmt.Println("Error: ", "Time is in the past")
+		os.Exit(3)
+	}
 	
 }
