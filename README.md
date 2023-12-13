@@ -5,8 +5,8 @@ Gominder is a simple command-line reminder tool written in Go. It allows users t
     ```bash
     gominder <time> <message>
 
-<time>: The time at which the reminder should be triggered.
-<message>: The message or description for the reminder.
+`<time>`: The time at which the reminder should be triggered.
+`<message>`: The message or description for the reminder.
 
 ## Installation
     ```bash
