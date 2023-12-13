@@ -23,5 +23,8 @@ func main() {
 		os.Exit(1)
 	}
 
-	
+	now = time.Now()
+	w := when.New(nil)
+	w.Add(en.All...)
+	w.Add(common.All...)
 }
