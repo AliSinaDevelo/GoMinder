@@ -60,5 +60,7 @@ func main() {
 			fmt.Println("Error: ", err)
 			os.Exit(5)
 		}
+		fmt.Println("Reminder set for", difference.Round(time.Second)
+		os.Exit(0)
 	}
 }
