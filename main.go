@@ -18,4 +18,10 @@ const (
 )
 
 func main() {
+	if len(os.Args) < 3 {
+		fmt.Println("Usage: gominder <time> <message>")
+		os.Exit(1)
+	}
+
 	
+}
