@@ -47,6 +47,18 @@ func main() {
 	difference := t.Time.Sub(now)
 	if os.Getenv(markName) == markValue {
 		time.Sleep(difference)
-		beeep.Alert("Reminder", strings.Join(os.Args[2:], " "), "")
+		err = beeep.Alert("Reminder", strings.Join(os.Args[2:], " "), "")
+		if err != nil {
+			fmt.Println("Error: ", err)
+			os.Exit(4)
+		}
+	} else {
+		cmd := exec.Command(os.Args[0], os.Args[1:]...)
+		cmd.Env = append(os.Environ(), fmt.Sprintf("%s=%s", markName, markValue))
+		err = cmd.Start()
+		if err != nil {
+			fmt.Println("Error: ", err)
+			os.Exit(5)
+		}
 	}
 }
