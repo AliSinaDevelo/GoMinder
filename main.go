@@ -27,4 +27,12 @@ func main() {
 	w := when.New(nil)
 	w.Add(en.All...)
 	w.Add(common.All...)
+
+	t, err := w.Parse(os.Args[1], now)
+	if err != nil {
+		fmt.Println("Error: ", err)
+		os.Exit(1)
+	}
+
+	
 }
