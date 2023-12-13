@@ -43,5 +43,10 @@ func main() {
 		fmt.Println("Error: ", "Time is in the past")
 		os.Exit(3)
 	}
-	
+
+	difference := t.Time.Sub(now)
+	if os.Getenv(markName) == markValue {
+		time.Sleep(difference)
+		beeep.Alert("Reminder", strings.Join(os.Args[2:], " "), "")
+	}
 }
